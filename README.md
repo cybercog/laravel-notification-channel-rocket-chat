@@ -48,7 +48,7 @@ You must install the service provider:
 // config/app.php
 'providers' => [
     ...
-    NotificationChannels\HipChat\HipChatServiceProvider::class,
+    NotificationChannels\RocketChat\RocketChatServiceProvider::class,
 ],
 ```
 ### Setting up the RocketChat service
@@ -89,8 +89,8 @@ class TaskCompleted extends Notification
     public function toRocketChat($notifiable)
     {
         return RocketChatMessage::create("Test message")
-            ->to('room_id') // optional
-            ->from('webhook_token');
+            ->to('room_id') // optional if set in config
+            ->from('webhook_token'); // optional if set in config
     }
 }
 ```
