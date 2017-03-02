@@ -42,9 +42,33 @@ You can install the package via composer:
 composer require laravel-notification-channels/rocket-chat
 ```
 
+You must install the service provider:
+
+```php
+// config/app.php
+'providers' => [
+    ...
+    NotificationChannels\HipChat\HipChatServiceProvider::class,
+],
+```
 ### Setting up the RocketChat service
 
 In order to send message to RocketChat channels, you need to obtain [Webhook](https://rocket.chat/docs/administrator-guides/integrations#how-to-create-a-new-incoming-webhook).
+
+Add your RocketChat API server's base url, incoming Webhook Token and optionally the default room to your `config/services.php`:
+
+```php
+// config/services.php
+...
+'rocketchat' => [
+     // Base URL for RocketChat API server (https://your.rocketchat.server.com)
+    'url' => env('ROCKETCHAT_URL'),
+    'token' => env('ROCKETCHAT_TOKEN'),
+    // Default room (optional)
+    'room' => env('ROCKETCHAT_ROOM'),
+],
+...
+```
 
 ## Usage
 
