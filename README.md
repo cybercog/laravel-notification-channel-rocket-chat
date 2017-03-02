@@ -11,6 +11,10 @@
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/laravel-notification-channels/rocket-chat/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-notification-channels/rocket-chat/?branch=master)
 [![Total Downloads](https://img.shields.io/packagist/dt/laravel-notification-channels/rocket-chat.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/rocket-chat)
 
+## WIP
+
+Don't use it on production. It's initial release. Stable version will be available at https://github.com/laravel-notification-channels/rocket-chat
+
 ## Introduction
 
 This package makes it easy to send notifications using [RocketChat](https://rocket.chat/) with Laravel 5.3. 
