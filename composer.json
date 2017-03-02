@@ -1,0 +1,48 @@
+{
+    "name": "laravel-notification-channels/rocket-chat",
+    "description": "Rocket.Chat Notifications channel for Laravel 5.3+",
+    "homepage": "https://github.com/laravel-notification-channels/rocket-chat",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "notifications",
+        "rocketchat",
+        "rocket.chat",
+        "chat"
+    ],
+    "authors": [
+        {
+            "name": "Anton Komarev",
+            "email": "a.komarev@cybercog.su",
+            "homepage": "http://ell.folio.su",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.2",
+        "illuminate/queue": "5.1.*|5.2.*|5.3.*|5.4.*",
+        "illuminate/notifications": "5.3.*|5.4.*",
+        "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*",
+        "php": ">=5.6.4"
+    },
+    "require-dev": {
+        "mockery/mockery": "^0.9.5",
+        "phpunit/phpunit": "~5.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "NotificationChannels\\RocketChat\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "NotificationChannels\\RocketChat\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
