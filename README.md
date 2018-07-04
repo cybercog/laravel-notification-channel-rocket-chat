@@ -132,7 +132,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Credits
 
-- [Anton Komarev](https://github.com/a-komarev)
+- [Anton Komarev](https://github.com/antonkomarev)
 - [All Contributors](../../contributors)
 
 ## Change log
