@@ -30,8 +30,7 @@ class CouldNotSendNotification extends \Exception
     /**
      * Thrown when there's a bad response from the RocketChat.
      *
-     * @param ClientException $exception
-     *
+     * @param  \GuzzleHttp\Exception\ClientException  $exception
      * @return static
      */
     public static function rocketChatRespondedWithAnError(ClientException $exception)
@@ -45,8 +44,7 @@ class CouldNotSendNotification extends \Exception
     /**
      * Thrown when we're unable to communicate with RocketChat.
      *
-     * @param  Exception  $exception
-     *
+     * @param  \Exception  $exception
      * @return static
      */
     public static function couldNotCommunicateWithRocketChat(Exception $exception)

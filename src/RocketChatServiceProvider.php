@@ -8,7 +8,18 @@ use Illuminate\Support\ServiceProvider;
 class RocketChatServiceProvider extends ServiceProvider
 {
     /**
+     * Register the application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+    }
+
+    /**
      * Bootstrap the application services.
+     *
+     * @return void
      */
     public function boot()
     {
@@ -22,12 +33,5 @@ class RocketChatServiceProvider extends ServiceProvider
                     config('services.rocketchat.room')
                 );
             });
-    }
-
-    /**
-     * Register the application services.
-     */
-    public function register()
-    {
     }
 }

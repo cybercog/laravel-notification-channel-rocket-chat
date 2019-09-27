@@ -2,11 +2,7 @@
 
 namespace NotificationChannels\RocketChat;
 
-use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Client as HttpClient;
-use GuzzleHttp\Psr7\MultipartStream;
-use function GuzzleHttp\Psr7\stream_for;
-use function GuzzleHttp\Psr7\modify_request;
 
 class RocketChat
 {
@@ -23,10 +19,11 @@ class RocketChat
     protected $room;
 
     /**
-     * @param \GuzzleHttp\Client $http
-     * @param string|null $url
-     * @param string $token
-     * @param string $room
+     * @param  \GuzzleHttp\Client  $http
+     * @param  string|null  $url
+     * @param  string  $token
+     * @param  string  $room
+     * @return void
      */
     public function __construct(HttpClient $http, $url, $token, $room)
     {
@@ -69,8 +66,8 @@ class RocketChat
     /**
      * Send a message.
      *
-     * @param string|int $to
-     * @param array $message
+     * @param  string|int  $to
+     * @param  array  $message
      * @return \Psr\Http\Message\ResponseInterface
      */
     public function sendMessage($to, $message)
@@ -87,8 +84,8 @@ class RocketChat
     /**
      * Make a simple post request.
      *
-     * @param string $url
-     * @param array $options
+     * @param  string  $url
+     * @param  array  $options
      * @return \Psr\Http\Message\ResponseInterface
      */
     protected function post($url, $options)

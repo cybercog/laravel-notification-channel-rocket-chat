@@ -2,8 +2,6 @@
 
 namespace NotificationChannels\RocketChat;
 
-use Illuminate\Support\Arr;
-
 class RocketChatMessage
 {
     /**

@@ -124,7 +124,7 @@ $ composer test
 
 ## Security
 
-If you discover any security related issues, please email anton@komarev.com instead of using the issue tracker.
+If you discover any security related issues, please email open@cybercog.su instead of using the issue tracker.
 
 ## Contributing
 
@@ -145,6 +145,6 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 ## About CyberCog
 
-[CyberCog](https://cybercog.ru) is a Social Unity of enthusiasts. Research best solutions in product & software development is our passion.
+[CyberCog](https://cybercog.su) is a Social Unity of enthusiasts. Research best solutions in product & software development is our passion.
 
 ![cybercog-logo](https://cloud.githubusercontent.com/assets/1849174/18418932/e9edb390-7860-11e6-8a43-aa3fad524664.png)
