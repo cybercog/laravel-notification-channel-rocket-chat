@@ -11,13 +11,11 @@ use NotificationChannels\RocketChat\RocketChat;
 use NotificationChannels\RocketChat\RocketChatMessage;
 use NotificationChannels\RocketChat\RocketChatWebhookChannel;
 use NotificationChannels\RocketChat\Exceptions\CouldNotSendNotification;
+use PHPUnit\Framework\TestCase;
 
-class RocketChatWebhookChannelTest extends \PHPUnit_Framework_TestCase
+class RocketChatWebhookChannelTest extends TestCase
 {
-    public function tearDown()
-    {
-        Mockery::close();
-    }
+    use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
 
     /** @test */
     public function it_can_send_a_notification()

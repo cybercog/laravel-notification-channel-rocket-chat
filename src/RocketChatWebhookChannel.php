@@ -6,6 +6,7 @@ use Exception;
 use GuzzleHttp\Exception\ClientException;
 use Illuminate\Notifications\Notification;
 use NotificationChannels\RocketChat\Exceptions\CouldNotSendNotification;
+use Psr\Http\Message\ResponseInterface;
 
 class RocketChatWebhookChannel
 {
@@ -36,7 +37,7 @@ class RocketChatWebhookChannel
      *
      * @throws \NotificationChannels\RocketChat\Exceptions\CouldNotSendNotification
      */
-    public function send($notifiable, Notification $notification)
+    public function send($notifiable, Notification $notification) : void
     {
         /** @var \NotificationChannels\RocketChat\RocketChatMessage $message */
         $message = $notification->toRocketChat($notifiable);
@@ -64,7 +65,7 @@ class RocketChatWebhookChannel
      * @param  \NotificationChannels\RocketChat\RocketChatMessage  $message
      * @return \Psr\Http\Message\ResponseInterface
      */
-    protected function sendMessage($to, RocketChatMessage $message)
+    protected function sendMessage($to, RocketChatMessage $message) : ResponseInterface
     {
         return $this->rocketChat->sendMessage($to, $message->toArray());
     }

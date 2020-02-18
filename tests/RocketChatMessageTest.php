@@ -3,8 +3,9 @@
 namespace NotificationChannels\RocketChat\Test;
 
 use NotificationChannels\RocketChat\RocketChatMessage;
+use PHPUnit\Framework\TestCase;
 
-class RocketChatMessageTest extends \PHPUnit_Framework_TestCase
+class RocketChatMessageTest extends TestCase
 {
     /** @test */
     public function it_can_accept_a_content_when_constructing_a_message()

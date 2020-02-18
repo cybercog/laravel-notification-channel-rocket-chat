@@ -3,6 +3,7 @@
 namespace NotificationChannels\RocketChat;
 
 use GuzzleHttp\Client as HttpClient;
+use Psr\Http\Message\ResponseInterface;
 
 class RocketChat
 {
@@ -28,7 +29,7 @@ class RocketChat
     public function __construct(HttpClient $http, $url, $token, $room)
     {
         $this->http = $http;
-        $this->url = rtrim($url ?: 'https://talk.cybercog.su', '/');
+        $this->url = rtrim($url, '/');
         $this->token = $token;
         $this->room = $room;
     }
@@ -38,7 +39,7 @@ class RocketChat
      *
      * @return string
      */
-    public function room()
+    public function room() : string
     {
         return $this->room;
     }
@@ -48,7 +49,7 @@ class RocketChat
      *
      * @return string
      */
-    public function url()
+    public function url() : string
     {
         return $this->url;
     }
@@ -58,7 +59,7 @@ class RocketChat
      *
      * @return string
      */
-    public function token()
+    public function token() : string
     {
         return $this->token;
     }
@@ -70,7 +71,7 @@ class RocketChat
      * @param  array  $message
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function sendMessage($to, $message)
+    public function sendMessage($to, $message) : ResponseInterface
     {
         $url = "{$this->url}/hooks/{$this->token}";
 
@@ -88,7 +89,7 @@ class RocketChat
      * @param  array  $options
      * @return \Psr\Http\Message\ResponseInterface
      */
-    protected function post($url, $options)
+    protected function post($url, $options) : ResponseInterface
     {
         return $this->http->post($url, $options);
     }
