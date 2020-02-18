@@ -12,7 +12,7 @@ class CouldNotSendNotification extends \Exception
      *
      * @return static
      */
-    public static function missingTo()
+    public static function missingTo() : self
     {
         return new static('Notification was not sent. Room identifier is missing.');
     }
@@ -22,7 +22,7 @@ class CouldNotSendNotification extends \Exception
      *
      * @return static
      */
-    public static function missingFrom()
+    public static function missingFrom() : self
     {
         return new static('Notification was not sent. Access token is missing.');
     }
@@ -33,7 +33,7 @@ class CouldNotSendNotification extends \Exception
      * @param  \GuzzleHttp\Exception\ClientException  $exception
      * @return static
      */
-    public static function rocketChatRespondedWithAnError(ClientException $exception)
+    public static function rocketChatRespondedWithAnError(ClientException $exception) : self
     {
         $message = $exception->getResponse()->getBody();
         $code = $exception->getResponse()->getStatusCode();
@@ -47,7 +47,7 @@ class CouldNotSendNotification extends \Exception
      * @param  \Exception  $exception
      * @return static
      */
-    public static function couldNotCommunicateWithRocketChat(Exception $exception)
+    public static function couldNotCommunicateWithRocketChat(Exception $exception) : self
     {
         return new static("The communication with RocketChat failed. Reason: {$exception->getMessage()}");
     }
