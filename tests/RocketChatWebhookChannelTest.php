@@ -32,7 +32,7 @@ class RocketChatWebhookChannelTest extends TestCase
                 [
                     'json' => [
                         'text' => 'hello',
-                        'roomId' => $room,
+                        'channel' => $room,
                     ],
                 ]
             )->andReturn(new Response(200));

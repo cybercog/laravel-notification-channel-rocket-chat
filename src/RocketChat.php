@@ -77,7 +77,7 @@ class RocketChat
 
         return $this->post($url, [
             'json' => array_merge($message, [
-                'roomId' => $to,
+                'channel' => $to,
             ]),
         ]);
     }

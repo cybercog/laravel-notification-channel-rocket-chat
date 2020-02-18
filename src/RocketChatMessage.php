@@ -94,7 +94,7 @@ class RocketChatMessage
     {
         $message = array_filter([
             'text' => $this->content,
-            'roomId' => $this->room,
+            'channel' => $this->room,
         ]);
 
         return $message;
