@@ -13,11 +13,11 @@ env:
     - LARAVEL_VERSION=^6.0
 
 install:
-    - composer require laravel/laravel:${LARAVEL_VERSION}
+    - composer require laravel/notifications:${LARAVEL_VERSION}
 
 
 script:
-    - phpunit --coverage-text --coverage-clover=coverage.clover
+    - vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
 
 after_script:
     - wget https://scrutinizer-ci.com/ocular.phar
