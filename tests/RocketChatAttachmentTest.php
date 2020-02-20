@@ -61,7 +61,7 @@ class RocketChatAttachmentTest extends TestCase
     /** @test */
     public function it_can_set_the_timestamp_as_datetime()
     {
-        $date = \DateTime::createFromFormat('Y-m-d H:i:s.v', '2020-02-19 19:00:00.000');
+        $date = \DateTime::createFromFormat('Y-m-d H:i:s.u', '2020-02-19 19:00:00.000');
         $attachment = new RocketChatAttachment();
         $attachment->timestamp($date);
 
