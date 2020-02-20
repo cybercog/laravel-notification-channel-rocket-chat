@@ -74,7 +74,6 @@ class RocketChat
     public function sendMessage($to, $message) : ResponseInterface
     {
         $url = "{$this->url}/hooks/{$this->token}";
-
         return $this->post($url, [
             'json' => array_merge($message, [
                 'channel' => $to,

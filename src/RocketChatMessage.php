@@ -216,7 +216,7 @@ class RocketChatMessage
             'alias' => $this->alias,
             'emoji' => $this->emoji,
             'avatar' => $this->avatar,
-            'attachments' => $this->attachments
+            'attachments' => $attachments
         ]);
 
         return $message;

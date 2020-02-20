@@ -122,11 +122,7 @@ class RocketChatAttachmentTest extends TestCase
     public function it_can_set_the_author()
     {
         $attachment = new RocketChatAttachment();
-        $attachment->author([
-            'name' => 'aname',
-            'link' => 'alink',
-            'icon' => 'aicon'
-        ]);
+        $attachment->author('aname', 'alink','aicon');
 
         $this->assertEquals([
             'author_name' => 'aname',

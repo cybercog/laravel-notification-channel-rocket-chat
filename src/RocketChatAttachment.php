@@ -181,14 +181,16 @@ class RocketChatAttachment
     }
 
     /**
-     * @param array $author
+     * @param string $name
+     * @param string $link
+     * @param string $icon
      * @return RocketChatAttachment
      */
-    public function author(array $author): self
+    public function author(string $name, string $link = '', string $icon = ''): self
     {
-        $this->authorName($author['name'] ?? '');
-        $this->authorLink($author['link'] ?? '');
-        $this->authorIcon($author['icon'] ?? '');
+        $this->authorName($name);
+        $this->authorLink($link);
+        $this->authorIcon($icon);
         return $this;
     }
 
