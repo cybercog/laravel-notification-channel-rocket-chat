@@ -2,6 +2,7 @@
 
 namespace NotificationChannels\RocketChat;
 
+use http\Exception\InvalidArgumentException;
 use Illuminate\Support\Str;
 
 /**
@@ -142,6 +143,10 @@ class RocketChatAttachment
      */
     public function timestamp($timestamp): self
     {
+        if(!($timestamp instanceof \DateTime) && !is_string($timestamp)) {
+            throw new \InvalidArgumentException('Timestamp must be string or DateTime, '.gettype($timestamp).' given.');
+        }
+
         if($timestamp instanceof \DateTime) {
             $date = clone $timestamp;
             $timestamp = $date->setTimezone(new \DateTimeZone('UTC'))->format('Y-m-d\TH:i:s.v\Z');
