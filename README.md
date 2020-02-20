@@ -17,7 +17,7 @@ Don't use it on production. It's initial release. Stable version will be availab
 
 ## Introduction
 
-This package makes it easy to send notifications using [RocketChat](https://rocket.chat/) with Laravel 5.3. 
+This package makes it easy to send notifications using [RocketChat](https://rocket.chat/) with Laravel 5.5+. 
 
 ## Contents
 
@@ -42,15 +42,6 @@ You can install the package via composer:
 composer require laravel-notification-channels/rocket-chat
 ```
 
-You must install the service provider:
-
-```php
-// config/app.php
-'providers' => [
-    ...
-    NotificationChannels\RocketChat\RocketChatServiceProvider::class,
-],
-```
 ### Setting up the RocketChat service
 
 In order to send message to RocketChat channels, you need to obtain [Webhook](https://rocket.chat/docs/administrator-guides/integrations#how-to-create-a-new-incoming-webhook).
@@ -89,7 +80,7 @@ class TaskCompleted extends Notification
     public function toRocketChat($notifiable)
     {
         return RocketChatMessage::create("Test message")
-            ->to('room_id') // optional if set in config
+            ->to('channel_name') // optional if set in config
             ->from('webhook_token'); // optional if set in config
     }
 }
@@ -100,7 +91,7 @@ In order to let your notification know which RocketChat room you are targeting, 
 ```php
 public function routeNotificationForRocketChat()
 {
-    return 'room_id';
+    return 'channel_name';
 }
 ```
 
@@ -112,6 +103,17 @@ public function routeNotificationForRocketChat()
 
 `content()`: Sets a content of the notification message. Supports Github flavoured markdown.
 
+`alias()`:  This will cause the message’s name to appear as the given alias, but your username will still display.
+
+`emoji()`: This will make the avatar on this message be an emoji. (e.g. ":see_no_evil:")
+
+`avatar()`: This will make the avatar use the provided image url.
+
+`attachment()`: This will add an single attachment.
+
+`attachments()`: This will add multiple attachments.
+
+`clearAttachments()`: This will remove all attachments.
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
